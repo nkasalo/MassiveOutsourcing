@@ -41,7 +41,7 @@ The analysis is performed by first running the mmseq_individual_clustering.R scr
 
 For reciprocal best hits, the output format is the standard BLAST output, available as mmseq_biosynthesis_reciprocal_final.tsv in the "examples" directory. The clustering output contains only the first two columns which represent the mapping of genes, available as mmseq_biosynthesis_final_08_e-40.tsv in the "examples" directory.
 
-This file is then processed using the heatmap.R script, which for each species assigns each detected enzyme to its corresponding biosynthethic pathway, calculates the length of each pathway and draws the heatmap using the most complete pathways.
+This file is then processed using the heatmap.R script, which for each species assigns each detected enzyme to its corresponding biosynthethic pathway, calculates the completeness score of each pathway and draws the heatmap using the most complete pathways.
 
 NOTE: this sample dataset will not detect all amino acid biosynthesis pathways as the database has been significantly reduced. An example of the output for the reciprocal best hits protocol is available as total_table_biosynthesis_rechit_eval10-40.tsv, while the output for the clustering protocol is available as total_table_biosynthesis_mmseq_c08_eval10-40.tsv in the "examples" directory.
 
