@@ -3,7 +3,7 @@
 The repository contains the sample data and the analysis scripts accompanying the manuscript Kasalo, N., Domazet-Lošo, M., Domazet-Lošo, T. **Massive outsourcing of energetically costly amino acids at the origin of animals**.
 
 All code was written in RStudio version 2025.05.0+496, R version 4.3.2, on macOS Monterey version 12.0.1.
-To run the amino acid auxotrophy detection protocol, MMSeqs2 has to be installed (tested on versions 14-7e284 and 15.6f452).
+To run the amino acid auxotrophy detection protocol, MMSeqs2 has to be installed (tested on versions 14-7e284 and 15-6f452).
 
 
 The repository contains two protocols:
