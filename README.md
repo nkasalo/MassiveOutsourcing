@@ -2,6 +2,10 @@
 
 The repository contains the sample data and the analysis scripts accompanying the manuscript Kasalo, N., Domazet-Lošo, M., Domazet-Lošo, T. **Massive outsourcing of energetically costly amino acids at the origin of animals**.
 
+All code was written in RStudio version 2025.05.0+496, R version 4.3.2, on macOS Monterey version 12.0.1.
+To run the amino acid auxotrophy detection protocol, MMSeqs2 has to be installed (tested on versions 14-7e284 and 15.6f452).
+
+
 The repository contains two protocols:
 1. Combinatorial phenotype selection test
 2. Amino acid auxotrophy detection
@@ -31,6 +35,13 @@ This directory contains the following files:
 8. names_2023.txt - mapping of species names to taxIDs
 9. pathways_all_KEGG_organisms_eukarya.tsv - mapping of genes to amino acid biosynthesis pathway data
 10. phylo_2023.xml - the phylogenetic tree in XML format
+11. examples
 
-The analysis is performed by first running the mmseq_individual_clustering.R script, which uses MMSeqs2 to identify homologs of genes provided in the reference database in the proteomes of all given species. There are two protocols that can be used: reciprocal best hits or clustering, both of which produce a file that shows the mapping of genes from the given species to genes in the reference database. This file is then processed using the heatmap.R script, which for each species assigns each detected enzyme to its corresponding biosynthethic pathway, calculates the length of each pathway and draws the heatmap using the most complete pathways. NOTE: this sample dataset will not detect all amino acid biosynthesis pathways as the database has been significantly reduced.
+The analysis is performed by first running the mmseq_individual_clustering.R script, which uses MMSeqs2 to identify homologs of genes provided in the reference database in the proteomes of all given species. There are two protocols that can be used: reciprocal best hits or clustering, both of which produce a file that shows the mapping of genes from the given species to genes in the reference database. Both approaches analyze one species at a time, which may take between a few minutes and half an hour, depending on the e-value cutoff, genome size, reference database size, and the chosen protocol.
+
+For reciprocal best hits, the output format is the standard BLAST output, available as mmseq_biosynthesis_reciprocal_final.tsv in the "examples" directory. The clustering output contains only the first two columns which represent the mapping of genes, available as mmseq_biosynthesis_final_08_e-40.tsv in the "examples" directory.
+
+This file is then processed using the heatmap.R script, which for each species assigns each detected enzyme to its corresponding biosynthethic pathway, calculates the length of each pathway and draws the heatmap using the most complete pathways.
+
+NOTE: this sample dataset will not detect all amino acid biosynthesis pathways as the database has been significantly reduced. An example of the output for the reciprocal best hits protocol is available as total_table_biosynthesis_rechit_eval10-40.tsv, while the output for the clustering protocol is available as total_table_biosynthesis_mmseq_c08_eval10-40.tsv in the "examples" directory.
 
