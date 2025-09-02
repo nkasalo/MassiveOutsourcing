@@ -216,8 +216,8 @@ energies = join(energies, aa_labels, by = "AA", type = "left")
 energies = energies %>% arrange(opportunity.high.respiration)
 
 ordered_AAs = unique(energies$Amino_acid)
-line5 = line5[ordered_AAs]
 ordered_AAs = intersect(colnames(line5), ordered_AAs)
+line5 = line5[ordered_AAs]
 line5 = line5 %>% mutate_all(as.numeric)
 
 line6 = line5
